@@ -1,7 +1,6 @@
 Feature: Login page features
 
 
-  Background:
 
   Scenario: the user should able to login with valid credentials
     Given the user is on the login page
