@@ -9,14 +9,3 @@ Feature: Login page features
     And the user enters password
     When the user clicks the login button
     Then the user should be able to login
-@wip
-  Scenario: the user see default filters as "my activity, work, favourite, announcements, and workflows"
-    Given the user is on the Home page
-    When the user clicks on Filter and search
-    Then the user see default "<filters>"
-      | filters       |
-      | my activity   |
-      | work          |
-      | favourite     |
-      | announcements |
-      | workflows     |
