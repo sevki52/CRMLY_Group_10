@@ -10,7 +10,7 @@ public class TaskPage extends BasePage {
     @FindBy(xpath = "(//*[@id=\"LIVEFEED_search_container\"])[1]")
     public WebElement filterSearchBtn;
 
-    @FindBy(xpath = "//div[@class='main-ui-filter-sidebar-item-container']")
-    public List<WebElement> expectedFilters;
+    @FindBy(xpath = "//*[@class='main-ui-filter-sidebar-item']")
+    public List<WebElement> actualFilters;
 
 }
