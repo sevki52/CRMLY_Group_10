@@ -118,9 +118,7 @@ public class MessageStepDefs {
     @Then("the user should be able to insert video")
     public void the_user_should_be_able_to_insert_video() {
         BrowserUtils.waitFor(2);
-        String unExpectedMsg = "[SOCKET] Socket connection error.";
-        System.out.println("mp.errorMsg.getText() = " + mp.errorMsg.getAttribute("textContent"));
-        Assert.assertFalse("video url does NOT inserted",mp.errorMsg.getAttribute("textContent").length()>1);
+        Assert.assertFalse("video url does NOT inserted",mp.errorMsg.isDisplayed());
 
 
     }

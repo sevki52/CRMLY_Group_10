@@ -54,9 +54,8 @@ Feature: Message features
       | amazon   |  |           |
 
   @wip
-  Scenario: US-917_TC-04 Verify that the user should be able to insert videos
+  Scenario: US-917_TC-04.1 Verify that the user should be able to insert videos
     Given the user clicks "Message" tab
     And the user clicks the "Insert video" icon
     And the user enters "https://www.youtube.com/watch?v=aazMMhTBbac" url to the urlBox
-    When the user click the save button
     Then the user should be able to insert video
