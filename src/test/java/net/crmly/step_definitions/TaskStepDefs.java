@@ -1,5 +1,6 @@
 package net.crmly.step_definitions;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -34,7 +35,36 @@ public class TaskStepDefs {
         }
     }
 
-   }
+    @When("the user clicks Add field button")
+    public void the_user_clicks_Add_field_button() {
+        taskPage.addFieldBtn.click();
+
+    }
+
+    @And("the user chooses some fields")
+    public void the_user_chooses_some_fields() {
+        BrowserUtils.waitFor(2);
+        taskPage.dateBtn.click();
+       BrowserUtils.waitFor(2);
+       taskPage.typeBtn.click();
+    }
+    @And("the user removes some fields")
+    public void the_user_removes_some_fields() {
+        BrowserUtils.waitFor(2);
+        taskPage.dateBtn.click();
+        BrowserUtils.waitFor(2);
+        taskPage.typeBtn.click();
+    }
+
+    @Then("chosen fields displayed on Add fields area")
+    public void chosen_fields_displayed_on_Add_fiels_area() {
+
+        Assert.assertFalse("Date not selected",taskPage.dateBtn.isSelected());
+        Assert.assertFalse("Type not selected",taskPage.typeBtn.isSelected());
+    }
+
+
+}
 
 
 

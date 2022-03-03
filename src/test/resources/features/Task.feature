@@ -9,7 +9,7 @@ Feature: Task Features
     When the user clicks the login button
     Then the user should be able to login
 
-  @wip
+  @CRMLYEUG-919
   Scenario: Verify to see default filters as "work, my activity, favorite, announcements, and workflows"
     Given the user is on the Home page
     When the user clicks on Filter and search
@@ -19,3 +19,15 @@ Feature: Task Features
       | MY ACTIVITY   |
       | ANNOUNCEMENTS |
       | WORKFLOWS     |
+
+    @CRMLYEUG-920
+    Scenario: Verify to add and remove field.
+      Given the user is on the Home page
+      When the user clicks on Filter and search
+      And the user clicks Add field button
+      And the user chooses some fields
+      And the user removes some fields
+      Then chosen fields displayed on Add fields area
+
+
+
