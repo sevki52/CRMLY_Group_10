@@ -22,7 +22,7 @@ public class MessageStepDefs {
 
     @Given("the user clicks the {string} icon")
     public void the_user_clicks_the_icon(String iconName) {
-
+        BrowserUtils.waitFor(2);
         mp.clickIcon(iconName);
     }
 
@@ -47,8 +47,8 @@ public class MessageStepDefs {
 
     @Given("the user clicks the Employees and departments contact lists")
     public void the_user_clicks_the_Employees_and_departments_contact_lists() {
-        BrowserUtils.waitFor(2);
 
+        //BrowserUtils.waitFor(2);
         mp.employeesAndDepartments.click();
     }
 
@@ -117,12 +117,67 @@ public class MessageStepDefs {
 
     @Then("the user should be able to insert video")
     public void the_user_should_be_able_to_insert_video() {
+
         BrowserUtils.waitFor(2);
         Assert.assertFalse("video url does NOT inserted",mp.errorMsg.isDisplayed());
-
-
     }
 
+    @Given("the user enters {string} to the quote box")
+    public void the_user_enters_to_the_quote_box(String quoteMsg) {
 
+        Driver.get().switchTo().frame(Driver.get().findElement(By.className("bx-editor-iframe")));
+        mp.actualQuoteMsg.sendKeys(quoteMsg);
+    }
+    @When("the user clicks the {string} contact")
+    public void the_user_clicks_the_contact(String contact) {
 
+        mp.quoteOfContact.click();
+    }
+
+    @When("the user clicks the contact")
+    public void the_user_clicks_the_contact() {
+
+        mp.quoteOfContact.click();
+    }
+
+    @Then("the user should be able to create a quote as a {string}")
+    public void the_user_should_be_able_to_create_a_quote_as_a(String expectedMsg) {
+
+        Assert.assertEquals("quote does NOT created",expectedMsg,mp.actualQuoteMsg.getAttribute("textContent"));
+    }
+
+    @Given("the user enters {string} to the text box")
+    public void the_user_enters_to_the_text_box(String message) {
+
+        Driver.get().switchTo().frame(Driver.get().findElement(By.className("bx-editor-iframe")));
+        mp.messageBox.sendKeys(mp.setMessage(message));
+        Driver.get().switchTo().defaultContent();
+    }
+
+    @When("the user clicks the Send button")
+    public void the_user_clicks_the_Send_button() {
+
+        mp.sendBtn.click();
+    }
+
+    @Then("the user should be able to send a {string} message")
+    public void the_user_should_be_able_to_send_a_message(String expectedMsg) {
+
+        BrowserUtils.waitFor(2);
+        Assert.assertEquals("message does NOT send",mp.expectedMessage,mp.getActualMsgTxt());
+    }
+
+    @Then("the user should be NOT able to send a message without title and displayed following message")
+    public void the_user_should_be_NOT_able_to_send_a_message_without_title_and_displayed_following_message(String expectedMsg) {
+
+        BrowserUtils.waitFor(2);
+        Assert.assertEquals("message send without title",expectedMsg,mp.errorMessage.getText().trim());
+    }
+
+    @Then("the user should be able to add mention as a {string}")
+    public void the_user_should_be_able_to_add_mention_as_a(String expectedMention) {
+
+        Driver.get().switchTo().frame(Driver.get().findElement(By.className("bx-editor-iframe")));
+        Assert.assertEquals("mention does NOT added",expectedMention,mp.actualMention.getAttribute("textContent"));
+    }
 }
