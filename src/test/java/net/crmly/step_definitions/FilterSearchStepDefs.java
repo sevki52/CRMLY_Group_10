@@ -94,9 +94,9 @@ public class FilterSearchStepDefs {
     public void the_user_clicks_Type_button() {
         filterSearchPage.typeSearchBtn.click();
         BrowserUtils.waitFor(4);
-        Actions actionsObject = new Actions(driver);
-        actionsObject.moveToElement(filterSearchPage.typeSearchBtn).perform();
-        WebElement link =driver.findElement(By.linkText("Posts"));
+//        Actions actionsObject = new Actions(driver);
+//        actionsObject.moveToElement(filterSearchPage.typeSearchBtn).perform();
+//        WebElement link =driver.findElement(By.linkText("Posts"));
 
 
 //        filterSearchPage.typeSearchBtn.sendKeys(Keys.ENTER);
