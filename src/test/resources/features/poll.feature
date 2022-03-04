@@ -1,8 +1,6 @@
-Feature: Login page features
+Feature: User should be able to create poll
 
-
-  @wip
-  Scenario: the user should able to login with valid credentials
+  Background:
     Given the user is on the login page
     And the user enters username
     And the user enters password
