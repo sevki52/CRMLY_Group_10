@@ -22,22 +22,39 @@ public class FilterSearchPage extends BasePage {
     @FindBy(xpath = "//div[contains(text(),'Type')]")
     public WebElement typeBtn;
 
-    @FindBy(xpath = "//*[@id=\"popup-window-content-LIVEFEED_search_container\"]/div/div/div[2]/div[2]/span[2]")
-    public WebElement restoreBtn;
 
     @FindBy(xpath = "//div[@class='main-ui-control-field']")
     public WebElement dateSearchBtn;
 
-    @FindBy(linkText = "Search")
+
+    @FindBy (xpath = "(//div[@class='main-ui-select-inner-item-element'])[2]")
+    public WebElement yesterdayDate;
+    @FindBy (xpath = "(//div[@class='main-ui-select-inner-item-element'])[3]")
+    public WebElement currentDayDate;
+
+    @FindBy(xpath = "//div[@class='main-ui-filter-field-button-inner']//button")
     public WebElement searchBtn;
 
-
+    @FindBy(className = "feed-time")
+    public List<WebElement> ActualDate;
 
     @FindBy(xpath = "//*[@id=\"popup-window-content-LIVEFEED_search_container\"]/div/div/div[2]/div[1]/div[2]/div[1]")
     public WebElement typeSearchBtn;
 
-    @FindBy(linkText = "Posts")
-    public WebElement posts;
+    @FindBy(xpath = "(//div[@class='main-ui-select-inner-label'])[8]")
+    public WebElement workReportsBtn;
+
+    @FindBy(xpath = "(//div[@class='main-ui-select-inner-label'])[4]")
+    public WebElement pollsBtn;
+
+    @FindBy(xpath = "(//span[@class='main-ui-square-item'])[1]")
+    public WebElement wr_Btn;
+
+    @FindBy(xpath = "(//span[@class='main-ui-square-item'])[1]")
+    public WebElement PL_Btn;
+
+
+
 
 
 

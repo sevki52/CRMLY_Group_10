@@ -20,7 +20,7 @@ public class FilterSearchStepDefs {
     FilterSearchPage filterSearchPage = new FilterSearchPage();
     LoginPage loginPage = new LoginPage();
     WebDriver driver;
-
+    //@CRMLYEUG-919
     @Given("the user is on the Home page")
     public void the_user_is_on_the_Home_page() {
         loginPage.login();
@@ -40,7 +40,7 @@ public class FilterSearchStepDefs {
 
         }
     }
-
+    //@CRMLYEUG-920
     @When("the user clicks Add field button")
     public void the_user_clicks_Add_field_button() {
         filterSearchPage.addFieldBtn.click();
@@ -68,17 +68,23 @@ public class FilterSearchStepDefs {
         Assert.assertFalse("Date not selected",filterSearchPage.dateBtn.isSelected());
         Assert.assertFalse("Type not selected",filterSearchPage.typeBtn.isSelected());
     }
-    @When("the user clicks Restore default fields button")
-    public void the_user_clicks_Restore_default_fields_button() {
-        filterSearchPage.restoreBtn.click();
+    //@CRMLYEUG-922
+    @When("the user clicks date button.")
+    public void the_user_clicks_date_button() {
+        BrowserUtils.waitFor(3);
+        filterSearchPage.dateSearchBtn.click();
     }
 
     @And("the user clicks date button {string}")
-    public void the_user_clicks_date_button(List<String> dateSearchBtn ) {
+    public void the_user_clicks_date_button(String dateSearchBtn ) {
         BrowserUtils.waitFor(3);
-        filterSearchPage.dateSearchBtn.click();
-        BrowserUtils.waitFor(10);
+        filterSearchPage.yesterdayDate.click();
+        BrowserUtils.waitFor(3);
 
+    }
+    @When("the user clicks date button Current day")
+    public void the_user_clicks_date_button_Current_day() {
+        filterSearchPage.currentDayDate.click();
     }
     @And("the user clicks search button")
     public void the_user_clicks_search_button() {
@@ -86,34 +92,33 @@ public class FilterSearchStepDefs {
 
     }
     @Then("the user should see the {string} post")
-    public void the_user_should_see_the_post(String string) {
+    public void the_user_should_see_the_post(String expectedDate) {
+        BrowserUtils.waitFor(3);
+        List<String> elementsText = BrowserUtils.getElementsText(filterSearchPage.ActualDate);
+        for (String s : elementsText) {
+            Assert.assertTrue(s.contains(expectedDate));
+            System.out.println("expectedDate = " + expectedDate);
+        }
 
     }
 
     @When("the user clicks Type button")
     public void the_user_clicks_Type_button() {
         filterSearchPage.typeSearchBtn.click();
-        BrowserUtils.waitFor(4);
-        Actions actionsObject = new Actions(driver);
-        actionsObject.moveToElement(filterSearchPage.typeSearchBtn).perform();
-        WebElement link =driver.findElement(By.linkText("Posts"));
-
-
-//        filterSearchPage.typeSearchBtn.sendKeys(Keys.ENTER);
-
-
-        BrowserUtils.waitFor(6);
     }
 
     @And("the user chooses one or some Types")
     public void the_user_chooses_one_or_some_Types() {
-//        filterSearchPage.posts.click();
-//        filterSearchPage.posts.sendKeys(Keys.ARROW_DOWN);
-
-
+        BrowserUtils.waitFor(2);
+       filterSearchPage.workReportsBtn.click();
+       BrowserUtils.waitFor(5);
+       filterSearchPage.pollsBtn.click();
+        BrowserUtils.waitFor(5);
     }
     @Then("the user should be able to see chosen Type")
     public void the_user_should_be_able_to_see_chosen_Type() {
+        Assert.assertTrue(filterSearchPage.wr_Btn.isDisplayed());
+        Assert.assertTrue(filterSearchPage.PL_Btn.isDisplayed());
 
     }
 
