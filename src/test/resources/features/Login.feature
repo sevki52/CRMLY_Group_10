@@ -1,7 +1,7 @@
 Feature: Login page features
 
 
-
+  @wip
   Scenario: the user should able to login with valid credentials
     Given the user is on the login page
     And the user enters username
