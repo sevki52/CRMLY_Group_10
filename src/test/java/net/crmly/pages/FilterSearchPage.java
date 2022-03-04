@@ -28,6 +28,17 @@ public class FilterSearchPage extends BasePage {
     @FindBy(xpath = "//div[@class='main-ui-control-field']")
     public WebElement dateSearchBtn;
 
+    @FindBy(linkText = "Search")
+    public WebElement searchBtn;
+
+
+
+    @FindBy(xpath = "//*[@id=\"popup-window-content-LIVEFEED_search_container\"]/div/div/div[2]/div[1]/div[2]/div[1]")
+    public WebElement typeSearchBtn;
+
+    @FindBy(linkText = "Posts")
+    public WebElement posts;
+
 
 
 }

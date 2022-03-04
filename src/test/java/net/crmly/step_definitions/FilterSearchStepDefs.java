@@ -8,12 +8,18 @@ import net.crmly.pages.LoginPage;
 import net.crmly.pages.FilterSearchPage;
 import net.crmly.utilities.BrowserUtils;
 import org.junit.Assert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 
 import java.util.List;
 
 public class FilterSearchStepDefs {
     FilterSearchPage filterSearchPage = new FilterSearchPage();
     LoginPage loginPage = new LoginPage();
+    WebDriver driver;
 
     @Given("the user is on the Home page")
     public void the_user_is_on_the_Home_page() {
@@ -68,7 +74,7 @@ public class FilterSearchStepDefs {
     }
 
     @And("the user clicks date button {string}")
-    public void the_user_clicks_date_button(String time) {
+    public void the_user_clicks_date_button(List<String> dateSearchBtn ) {
         BrowserUtils.waitFor(3);
         filterSearchPage.dateSearchBtn.click();
         BrowserUtils.waitFor(10);
@@ -76,10 +82,38 @@ public class FilterSearchStepDefs {
     }
     @And("the user clicks search button")
     public void the_user_clicks_search_button() {
+        filterSearchPage.searchBtn.click();
 
     }
     @Then("the user should see the {string} post")
     public void the_user_should_see_the_post(String string) {
+
+    }
+
+    @When("the user clicks Type button")
+    public void the_user_clicks_Type_button() {
+        filterSearchPage.typeSearchBtn.click();
+        BrowserUtils.waitFor(4);
+//        Actions actionsObject = new Actions(driver);
+//        actionsObject.moveToElement(filterSearchPage.typeSearchBtn).perform();
+//        WebElement link =driver.findElement(By.linkText("Posts"));
+
+
+//        filterSearchPage.typeSearchBtn.sendKeys(Keys.ENTER);
+
+
+        BrowserUtils.waitFor(6);
+    }
+
+    @And("the user chooses one or some Types")
+    public void the_user_chooses_one_or_some_Types() {
+//        filterSearchPage.posts.click();
+//        filterSearchPage.posts.sendKeys(Keys.ARROW_DOWN);
+
+
+    }
+    @Then("the user should be able to see chosen Type")
+    public void the_user_should_be_able_to_see_chosen_Type() {
 
     }
 
