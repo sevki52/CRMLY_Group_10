@@ -13,7 +13,11 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "net/crmly/step_definitions",
         dryRun = false,
-        tags = "@CRMLYEUG-922"
+<<<<<<<<< Temporary merge branch 1
+        tags = "@smoke"
+=========
+        tags = "@CRMLYEUG-920"
+>>>>>>>>> Temporary merge branch 2
 
 )
 
