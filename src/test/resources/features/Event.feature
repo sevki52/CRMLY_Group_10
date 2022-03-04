@@ -11,3 +11,4 @@ Feature: As a user, I should be able to create events by clicking
 
   Scenario: User should be able to add Event start and ending date and time and specify the time zone.
     Given the user is on the login page
+    And the user enters username
