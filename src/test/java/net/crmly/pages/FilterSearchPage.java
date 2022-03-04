@@ -5,7 +5,7 @@ import org.openqa.selenium.support.FindBy;
 
 import java.util.List;
 
-public class TaskPage extends BasePage {
+public class FilterSearchPage extends BasePage {
 
     @FindBy(xpath = "(//*[@id=\"LIVEFEED_search_container\"])[1]")
     public WebElement filterSearchBtn;
@@ -21,6 +21,24 @@ public class TaskPage extends BasePage {
 
     @FindBy(xpath = "//div[contains(text(),'Type')]")
     public WebElement typeBtn;
+
+    @FindBy(xpath = "//*[@id=\"popup-window-content-LIVEFEED_search_container\"]/div/div/div[2]/div[2]/span[2]")
+    public WebElement restoreBtn;
+
+    @FindBy(xpath = "//div[@class='main-ui-control-field']")
+    public WebElement dateSearchBtn;
+
+    @FindBy(linkText = "Search")
+    public WebElement searchBtn;
+
+
+
+    @FindBy(xpath = "//*[@id=\"popup-window-content-LIVEFEED_search_container\"]/div/div/div[2]/div[1]/div[2]/div[1]")
+    public WebElement typeSearchBtn;
+
+    @FindBy(linkText = "Posts")
+    public WebElement posts;
+
 
 
 }
