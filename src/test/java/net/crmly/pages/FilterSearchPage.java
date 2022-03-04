@@ -53,6 +53,18 @@ public class FilterSearchPage extends BasePage {
     @FindBy(xpath = "(//span[@class='main-ui-square-item'])[1]")
     public WebElement PL_Btn;
 
+    @FindBy(css=".main-ui-filter-add-item")
+    public WebElement saveFilterBtn;
+
+    @FindBy(css=".main-ui-filter-sidebar-edit-control")
+    public WebElement filterName;
+
+    @FindBy(css = "span[class*='main-ui-filter-save']")
+    public WebElement saveBtn;
+
+    @FindBy(xpath = "//span[@class='main-ui-filter-field-restore-items']")
+    public WebElement restoreBtn;
+
 
 
 

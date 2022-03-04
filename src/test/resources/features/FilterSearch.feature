@@ -62,13 +62,20 @@ Feature: Task Features
     And the user clicks Save filter button
     And the user writes a new filter
     And the user clicks the save button
-    Then the user should see new filter
+    Then the user see new filters list
+      | WORK          |
+      | FAVORITES     |
+      | MY ACTIVITY   |
+      | ANNOUNCEMENTS |
+      | WORKFLOWS     |
+      | WORK REPORTS  |
 
   @CRMLYEUG-924
   Scenario: Verify to restore default field
     Given the user is on the Home page
     When the user clicks on Filter and search
-    And the user deletes all fields
+    And the user clicks Add field button
+    And the user deletes one field
     And the user clicks Restore default fields button
     Then the user should see the Restore default field
 

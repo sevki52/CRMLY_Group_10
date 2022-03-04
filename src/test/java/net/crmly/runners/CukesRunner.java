@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "net/crmly/step_definitions",
         dryRun = false,
-        tags = " @CRMLYEUG-921"
+        tags = " @CRMLYEUG-924"
 )
 
 public class CukesRunner {
