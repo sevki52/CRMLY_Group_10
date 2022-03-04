@@ -9,5 +9,6 @@ public class EventStepDefs {
     public void navigateToEventTab() {
         PortalPage portalPage=new PortalPage();
         portalPage.navigateToTab("Event");
+
     }
 }
