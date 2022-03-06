@@ -33,25 +33,24 @@ Feature: Task Features
   Scenario: Verify to search by selecting Date
     Given the user is on the Home page
     When the user clicks on Filter and search
-    And the user clicks Restore default fields button
+    And the user clicks date button.
     And the user clicks date button "Yesterday"
     And the user clicks search button
-    Then the user should see the "Yesterday's" post
+    Then the user should see the "yesterday" post
 
   @CRMLYEUG-940
   Scenario: Verify to search by selecting Date
     Given the user is on the Home page
     When the user clicks on Filter and search
-    And the user clicks Add field button
-    And the user clicks date button "Current day"
+    And the user clicks date button.
+    And the user clicks date button Current day
     And the user clicks search button
-    Then the user should see the "Today's" post
+    Then the user should see the "today" post
 
   @CRMLYEUG-922
   Scenario: Verify to search by selecting one or more Type.
     Given the user is on the Home page
     When the user clicks on Filter and search
-    And the user clicks Restore default fields button
     And the user clicks Type button
     And the user chooses one or some Types
     Then the user should be able to see chosen Type
@@ -63,15 +62,22 @@ Feature: Task Features
     And the user clicks Save filter button
     And the user writes a new filter
     And the user clicks the save button
-    Then the user should see new filter
+    Then the user see new filters list
+      | WORK          |
+      | FAVORITES     |
+      | MY ACTIVITY   |
+      | ANNOUNCEMENTS |
+      | WORKFLOWS     |
+      | WORK REPORTS  |
 
   @CRMLYEUG-924
   Scenario: Verify to restore default field
     Given the user is on the Home page
     When the user clicks on Filter and search
-    And the user deletes all fields
+    And the user clicks Add field button
+    And the user deletes one field
     And the user clicks Restore default fields button
-    Then the user should see the Restore default filed
+    Then the user should see the Restore default field
 
   @CRMLYEUG-925
   Scenario: Verify to reset filters to default.
@@ -79,7 +85,7 @@ Feature: Task Features
     When the user clicks on Filter and search
     And the user clicks Configure filter button
     And the user deletes added filter
-    And the user click the save button
+    And the user clicks the save button
     Then the user see default filters
       | WORK          |
       | FAVORITES     |
