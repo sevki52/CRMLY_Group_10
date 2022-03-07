@@ -2,6 +2,7 @@ package net.crmly.step_definitions;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+
 import net.crmly.pages.EventPage;
 import net.crmly.pages.PortalPage;
 import org.junit.Assert;
@@ -51,6 +52,28 @@ public class EventStepDefs {
         Assert.assertTrue(eventPage.InvalidEnterDate(string));
 
     }
+
+    @Given("User can select set a reminder")
+    public void user_can_select_set_a_reminder() {
+        EventPage eventPage=new EventPage();
+        Assert.assertTrue(eventPage.SetReminder.isSelected());
+    }
+
+    @Given("User enters {string} and {string}")
+    public void user_enters_and(String string, String string2) {
+        EventPage eventPage=new EventPage();
+        eventPage.SetReminder(string,string2);
+
+    }
+
+    @Then("Verify that user can enter {string} and {string}")
+    public void verify_that_user_can_enter_time(String string, String string2) {
+        EventPage eventPage=new EventPage();
+         boolean m1= eventPage.VerifySetReminder(string,string2);
+       Assert.assertTrue(m1);
+
+    }
+
 
 
 }

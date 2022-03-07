@@ -1,6 +1,8 @@
 package net.crmly.pages;
 
 import net.crmly.utilities.BrowserUtils;
+import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
@@ -36,7 +38,16 @@ public class EventPage extends BasePage {
     @FindBy (xpath = "//select[@name='TZ_TO']")
     public WebElement TimeZoneSelection2;
 
+    @FindBy(css = ".feed-event-rem-ch")
+    public WebElement SetReminder;
 
+    @FindBy(css = "#event-remind_countcal_3Jcl")
+    public WebElement SetReminderTime;
+
+    @FindBy(css = "#event-remind_typecal_3Jcl")
+    public WebElement  SetReminderTime1;
+    Select select=new Select(SetReminderTime1);
+    List<WebElement> selection= select.getOptions();
 
         public void EnterDate(String Date1, String Time1,String Date2,String Time2){
             StartDate.clear();      StartDate.sendKeys(Date1);
@@ -75,6 +86,28 @@ public class EventPage extends BasePage {
 
 
         }
+        public void SetReminder(String str1, String str2){
+            BrowserUtils.verifyElementDisplayed(SetReminderTime);
+                SetReminderTime.clear();
+                SetReminderTime.sendKeys(str1);
 
+                if(str2.equalsIgnoreCase("minutes")){
+                    selection.get(0).click();
+
+                }else if(str2.equalsIgnoreCase("hours")){
+                    selection.get(1).click();
+                } else if(str2.equalsIgnoreCase("days")){
+                    selection.get(2).click();
+                }
+
+
+        }
+
+        public boolean VerifySetReminder(String str1, String str2){
+         boolean s1= SetReminderTime.getAttribute("value").equalsIgnoreCase(str1);
+            boolean s2  = select.getFirstSelectedOption().getText().equalsIgnoreCase(str2);
+       return s1 & s2;
+
+        }
 
 }
