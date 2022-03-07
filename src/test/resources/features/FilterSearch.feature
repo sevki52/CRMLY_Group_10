@@ -83,6 +83,9 @@ Feature: Task Features
   Scenario: Verify to reset filters to default.
     Given the user is on the Home page
     When the user clicks on Filter and search
+    And the user clicks Save filter button
+    And the user writes a new filter
+    And the user clicks the save button
     And the user clicks Configure filter button
     And the user deletes added filter
     And the user clicks the save button

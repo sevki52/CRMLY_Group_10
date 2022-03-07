@@ -170,7 +170,17 @@ public class FilterSearchStepDefs {
         Assert.assertTrue(filterSearchPage.restoreBtn.isDisplayed());
 
     }
+    @And("the user clicks Configure filter button")
+    public void the_user_clicks_Configure_filter_button() {
+        BrowserUtils.waitFor(2);
+        filterSearchPage.configurBtn.click();
 
+    }
+
+    @And("the user deletes added filter")
+    public void the_user_deletes_added_filter() {
+        filterSearchPage.deleteFilterBtn.click();
+    }
 
 }
 
