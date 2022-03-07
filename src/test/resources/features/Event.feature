@@ -24,8 +24,20 @@ Feature: As a user, I should be able to create events by clicking
     And   User enters "<duration>" and "<time>"
     Then  Verify that user can enter "<duration>" and "<time>"
 
+
+      Examples:
+        | duration  | time     |
+        |      20   |  minutes |
+        |      2    | hours    |
+        |      2    | days     |
+
+
+      Scenario Outline: User should be able to select event location from the dropdown
+      Given Users can select any "<location>"
+      Then Veriyf that user select "<location>"
     Examples:
-      | duration | time    |
-      | 20       | minutes |
-      | 2        | hours   |
-      | 2        | days    |
+      | location               |
+      |   Central Meeting Room |
+      |   East Meeting Room    |
+      |   West Meeting Room    |
+
