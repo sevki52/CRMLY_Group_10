@@ -1,4 +1,4 @@
-@smoke
+
 Feature: Message features
 
   Background: the user logged successfully
@@ -7,7 +7,7 @@ Feature: Message features
     And the user enters password
     When the user clicks the login button
 
-  @CRMLYEUG-928
+  @CRMLYEUG-928 @smoke
   Scenario: US-917_TC-01.1 Verify that the user should be able to upload files from local disks
     Given the user clicks "Message" tab
     And the user clicks the "Upload files" icon

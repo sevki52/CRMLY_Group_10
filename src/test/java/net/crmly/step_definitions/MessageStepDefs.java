@@ -85,8 +85,10 @@ public class MessageStepDefs {
 
     @When("the user click the save button")
     public void the_user_click_the_save_button() {
+
         mp.saveBtn.click();
     }
+
     @Then("the user should be able to see the {string} link")
     public void the_user_should_be_able_to_see_the_link(String expectedLinkName) {
 
