@@ -48,7 +48,6 @@ public class MessageStepDefs {
     @Given("the user clicks the Employees and departments contact lists")
     public void the_user_clicks_the_Employees_and_departments_contact_lists() {
 
-        //BrowserUtils.waitFor(2);
         mp.employeesAndDepartments.click();
     }
 
