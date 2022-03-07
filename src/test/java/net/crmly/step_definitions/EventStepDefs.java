@@ -75,5 +75,19 @@ public class EventStepDefs {
     }
 
 
+    @Given("Users can select any {string}")
+    public void users_can_select_any_location(String string) {
+        EventPage eventPage=new EventPage();
+        eventPage.EventLocation(string);
+
+    }
+
+    @Then("Veriyf that user select {string}")
+    public void veriyf_that_user_select_location(String string) {
+        EventPage eventPage=new EventPage();
+        System.out.println("eventPage.VerifyLocation(string) = " + eventPage.VerifyLocation(string));
+
+    }
+
 
 }
