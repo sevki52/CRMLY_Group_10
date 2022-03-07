@@ -17,3 +17,14 @@ Feature: As a user, I should be able to create events by clicking
   Scenario: User should be able to add Event start and ending date and time and specify the time zone.
     Given User enters invalid "02/10/2022" "03:00 pm" "02/15/2022" "05:00 pm"
     Then  Verify user can not "02/10/2022" set Event
+
+    Scenario Outline: User should be able to set a reminder.
+      Given User can select set a reminder
+      And   User enters "<duration>" and "<time>"
+      Then  Verify that user can enter "<duration>" and "<time>"
+
+      Examples:
+        | duration  | time     |
+        |      20   |  minutes |
+        |      2    | hours    |
+        |      2    | days     |
