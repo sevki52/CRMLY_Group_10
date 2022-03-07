@@ -7,7 +7,7 @@ Feature: User should be able to create poll
     When the user clicks the login button
     Then the user should be able to login
     And the user clicks "Poll" tab
-
+  @smoke
   Scenario:Adding contacts
     And the user clicks to inputBox
     And the user clicks the Add more button
