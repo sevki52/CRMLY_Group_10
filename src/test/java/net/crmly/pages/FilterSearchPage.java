@@ -65,6 +65,12 @@ public class FilterSearchPage extends BasePage {
     @FindBy(xpath = "//span[@class='main-ui-filter-field-restore-items']")
     public WebElement restoreBtn;
 
+    @FindBy(css = "span.main-ui-filter-add-edit")
+    public WebElement configurBtn;
+
+    @FindBy(xpath = "(//span[@title=\"Delete filter\"])[8]")
+    public WebElement deleteFilterBtn;
+
 
 
 
