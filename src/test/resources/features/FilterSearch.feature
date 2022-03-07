@@ -20,7 +20,7 @@ Feature: Task Features
       | ANNOUNCEMENTS |
       | WORKFLOWS     |
 
-  @CRMLYEUG-920
+  @CRMLYEUG-920 @smoke
   Scenario: Verify to add and remove field.
     Given the user is on the Home page
     When the user clicks on Filter and search

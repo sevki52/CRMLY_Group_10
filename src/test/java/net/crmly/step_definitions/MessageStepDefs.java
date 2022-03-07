@@ -48,7 +48,6 @@ public class MessageStepDefs {
     @Given("the user clicks the Employees and departments contact lists")
     public void the_user_clicks_the_Employees_and_departments_contact_lists() {
 
-        //BrowserUtils.waitFor(2);
         mp.employeesAndDepartments.click();
     }
 
@@ -85,8 +84,10 @@ public class MessageStepDefs {
 
     @When("the user click the save button")
     public void the_user_click_the_save_button() {
+
         mp.saveBtn.click();
     }
+
     @Then("the user should be able to see the {string} link")
     public void the_user_should_be_able_to_see_the_link(String expectedLinkName) {
 

@@ -12,8 +12,11 @@ import org.junit.runner.RunWith;
                 "rerun:target/rerun.txt"},
         features = "src/test/resources/features",
         glue = "net/crmly/step_definitions",
-        dryRun = true,
-        tags = "@smo"
+
+
+        dryRun =false,
+        tags = "@smoke"
+
 
 
 )
