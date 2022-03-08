@@ -68,6 +68,14 @@ public class EventPage extends BasePage {
     @FindBy(css = "#destDepartmentTab_calnAJEM3")
     public WebElement EmpDemp;
 
+    @FindBy(xpath = "//span[text()='More'][@class='feed-event-more-link-text']")
+    public WebElement More;
+
+    @FindBy(xpath = "//span[text()='Hide extra parameters'][@class='feed-event-more-link-text']")
+    public WebElement HideMore;
+
+    //tr/td/label[text()='Availability']
+
 
 
     //span[text()='Accounting'][@class='feed-event-destination-text']

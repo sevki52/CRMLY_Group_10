@@ -106,5 +106,19 @@ public class EventStepDefs {
     }
 
 
+    @Given("Users can click on More icon")
+    public void usersCanClickOnMoreIcon() {
 
+        new EventPage().More.click();
+        Assert.assertTrue(new EventPage().HideMore.isDisplayed());
+
+
+    }
+
+    @Then("Verify that users clicked on More icon")
+    public void verifyThatUsersClickedOnMoreIcon() {
+        Assert.assertTrue(new EventPage().HideMore.isDisplayed());
+        new EventPage().HideMore.click();
+        Assert.assertTrue(new EventPage().More.isDisplayed());
+    }
 }
