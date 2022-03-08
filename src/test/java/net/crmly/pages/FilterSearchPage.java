@@ -29,6 +29,7 @@ public class FilterSearchPage extends BasePage {
 
     @FindBy (xpath = "(//div[@class='main-ui-select-inner-item-element'])[2]")
     public WebElement yesterdayDate;
+
     @FindBy (xpath = "(//div[@class='main-ui-select-inner-item-element'])[3]")
     public WebElement currentDayDate;
 

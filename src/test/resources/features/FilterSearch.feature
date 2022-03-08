@@ -1,3 +1,4 @@
+@CRMLYEUG-926
 Feature: Task Features
 
   Background:
@@ -24,10 +25,12 @@ Feature: Task Features
   Scenario: Verify to add and remove field.
     Given the user is on the Home page
     When the user clicks on Filter and search
+    And the user clicks Restore default fields button
     And the user clicks Add field button
     And the user chooses some fields
     And the user removes some fields
     Then chosen fields displayed on Add fields area
+
 
   @CRMLYEUG-921
   Scenario: Verify to search by selecting Date
@@ -51,6 +54,7 @@ Feature: Task Features
   Scenario: Verify to search by selecting one or more Type.
     Given the user is on the Home page
     When the user clicks on Filter and search
+    And the user clicks Restore default fields button
     And the user clicks Type button
     And the user chooses one or some Types
     Then the user should be able to see chosen Type
@@ -69,6 +73,9 @@ Feature: Task Features
       | ANNOUNCEMENTS |
       | WORKFLOWS     |
       | WORK REPORTS  |
+    And the user clicks Configure filter button
+    And the user deletes added filter
+    And the user clicks the save button
 
   @CRMLYEUG-924
   Scenario: Verify to restore default field
@@ -76,6 +83,7 @@ Feature: Task Features
     When the user clicks on Filter and search
     And the user clicks Add field button
     And the user deletes one field
+    And the user adds one field
     And the user clicks Restore default fields button
     Then the user should see the Restore default field
 

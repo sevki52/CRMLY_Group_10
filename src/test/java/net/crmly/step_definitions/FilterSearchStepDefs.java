@@ -90,11 +90,13 @@ public class FilterSearchStepDefs {
 
     @And("the user clicks date button Current day")
     public void the_user_clicks_date_button_Current_day() {
+        BrowserUtils.waitFor(2);
         filterSearchPage.currentDayDate.click();
     }
 
     @And("the user clicks search button")
     public void the_user_clicks_search_button() {
+        BrowserUtils.waitFor(2);
         filterSearchPage.searchBtn.click();
 
     }
@@ -112,6 +114,7 @@ public class FilterSearchStepDefs {
 
     @When("the user clicks Type button")
     public void the_user_clicks_Type_button() {
+        BrowserUtils.waitFor(2);
         filterSearchPage.typeSearchBtn.click();
     }
 
@@ -133,16 +136,19 @@ public class FilterSearchStepDefs {
     //    @CRMLYEUG-923
     @And("the user clicks Save filter button")
     public void the_user_clicks_Save_filter_button() {
+        BrowserUtils.waitFor(2);
         filterSearchPage.saveFilterBtn.click();
     }
 
     @And("the user writes a new filter")
     public void the_user_writes_a_new_filter() {
+        BrowserUtils.waitFor(2);
         filterSearchPage.filterName.sendKeys("Work reports");
     }
 
     @And("the user clicks the save button")
     public void the_user_clicks_the_save_button() {
+        BrowserUtils.waitFor(2);
         filterSearchPage.saveBtn.click();
     }
 
@@ -157,12 +163,19 @@ public class FilterSearchStepDefs {
     //@CRMLYEUG-924
     @When("the user deletes one field")
     public void the_user_deletes_one_field() {
+        BrowserUtils.waitFor(2);
+        filterSearchPage.dateBtn.click();
+    }
+    @When("the user adds one field")
+    public void the_user_adds_one_field() {
         filterSearchPage.dateBtn.click();
     }
 
     @And("the user clicks Restore default fields button")
     public void the_user_clicks_Restore_default_fields_button() {
+        BrowserUtils.waitFor(2);
         filterSearchPage.restoreBtn.click();
+
 
     }
     @Then("the user should see the Restore default field")
@@ -179,6 +192,7 @@ public class FilterSearchStepDefs {
 
     @And("the user deletes added filter")
     public void the_user_deletes_added_filter() {
+
         filterSearchPage.deleteFilterBtn.click();
     }
 
