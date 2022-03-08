@@ -38,3 +38,12 @@ Feature: As a user, I should be able to create events by clicking
       |   Central Meeting Room |
       |   East Meeting Room    |
       |   West Meeting Room    |
+
+
+        Scenario Outline: User should be able to add attendees by selecting contacts individually or adding groups and departments.
+          Given Users can add "<person>" "<departments>"
+          Then Verify that selected "<person>" "<departments>"
+          Examples:
+            | person                | departments  |
+            |hr28@cybertekschool.com| Accounting   |
+            |hr80@cybertekschool.com| Support      |
