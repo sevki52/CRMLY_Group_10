@@ -15,14 +15,6 @@ public class LoginPage extends BasePage{
     @FindBy(className = "login-btn")
     public WebElement loginBtn;
 
-    @FindBy(xpath = "//span[@id='feed-add-post-form-link-text']")
-    public WebElement moreButton;
-
-    @FindBy(xpath = "//body/div[@id='menu-popup-feed-add-post-form-popup']/div[@id='popup-window-content-menu-popup-feed-add-post-form-popup']/div[1]/div[1]/span[3]/span[2]")
-    public WebElement announcement;
-
-
-
 
     public void login(){
         usernameBox.sendKeys(ConfigurationReader.get("username"));
