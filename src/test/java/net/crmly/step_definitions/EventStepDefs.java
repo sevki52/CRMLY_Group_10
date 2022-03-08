@@ -89,5 +89,22 @@ public class EventStepDefs {
 
     }
 
+    @Given("Users can add {string} {string}")
+    public void users_can_add(String string, String string2) {
+
+        EventPage eventPage=new EventPage();
+        eventPage.AddPersonGroup(string,string2);
+
+    }
+
+    @Then("Verify that selected {string} {string}")
+    public void verify_that_selected(String string, String string2) {
+        EventPage eventPage=new EventPage();
+        System.out.println("eventPage.Members.getText() = " + eventPage.Members.getText());
+        Assert.assertTrue(eventPage.Members.getText().contains(string));
+        Assert.assertTrue(eventPage.Members.getText().contains(string2));
+    }
+
+
 
 }

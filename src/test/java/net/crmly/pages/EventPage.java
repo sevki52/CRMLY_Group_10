@@ -1,6 +1,7 @@
 package net.crmly.pages;
 
 import net.crmly.utilities.BrowserUtils;
+import net.crmly.utilities.Driver;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -56,7 +57,23 @@ public class EventPage extends BasePage {
      @FindBy(linkText = "Add persons, groups or department")
      public WebElement AddPerson;
 
-     @FindBy(css = "#bxecmr_0")
+     @FindBy(xpath = "//div[text()='Cristopher Debua'][@class='bx-finder-box-item-t7-name']")
+     public WebElement Person;
+
+     @FindBy(xpath = "//div[text()='Accounting'][@class='bx-finder-box-item-t7-name']")
+     public WebElement Group;
+
+    @FindBy(css = ".feed-event-destination-wrap")
+    public WebElement Members;
+    @FindBy(css = "#destDepartmentTab_calnAJEM3")
+    public WebElement EmpDemp;
+
+
+
+    //span[text()='Accounting'][@class='feed-event-destination-text']
+
+
+    @FindBy(css = "#bxecmr_0")
      public WebElement firstRoom;
 
     @FindBy(css = "#bxecmr_1")
@@ -160,6 +177,31 @@ if(EventLocat.getAttribute("value").equalsIgnoreCase(str)) {
         }
 
         }
+
+        public void AddPersonGroup(String str1,String str2){
+
+        AddPerson.click();
+        EmpDemp.click();
+        String person="//div[text()='"+str1+"'][@class='bx-finder-company-department-employee-name']";
+        String group="//div[text()='"+str2+"'][@class='bx-finder-company-department-text']";
+        String group1="//div[@rel='"+str2+": All department and subdepartment employees']";
+
+            Driver.get().findElement(By.xpath(person)).click();
+            Driver.get().findElement(By.xpath(group)).click();
+            Driver.get().findElement(By.xpath(group1)).click();
+
+
+            //div[text()='Accounting'][@class='bx-finder-company-department-text']
+            //div[text()='helpdesk22@cybertekschool.com'][@class='bx-finder-company-department-employee-name']
+
+        }
+
+        public void VerifyAddPersonGroup(String str1, String str2){
+
+
+
+        }
+
 
     }
 
