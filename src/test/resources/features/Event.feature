@@ -41,3 +41,6 @@ Feature: As a user, I should be able to create events by clicking
       |   East Meeting Room    |
       |   West Meeting Room    |
 
+      Scenario: User should be able to click on More to see the event details
+        Given Users can click on More icon
+        Then  Verify that users clicked on More icon
