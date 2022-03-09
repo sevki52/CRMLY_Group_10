@@ -75,5 +75,50 @@ public class EventStepDefs {
     }
 
 
+    @Given("Users can select any {string}")
+    public void users_can_select_any_location(String string) {
+        EventPage eventPage=new EventPage();
+        eventPage.EventLocation(string);
 
+    }
+
+    @Then("Veriyf that user select {string}")
+    public void veriyf_that_user_select_location(String string) {
+        EventPage eventPage=new EventPage();
+        System.out.println("eventPage.VerifyLocation(string) = " + eventPage.VerifyLocation(string));
+
+    }
+
+    @Given("Users can add {string} {string}")
+    public void users_can_add(String string, String string2) {
+
+        EventPage eventPage=new EventPage();
+        eventPage.AddPersonGroup(string,string2);
+
+    }
+
+    @Then("Verify that selected {string} {string}")
+    public void verify_that_selected(String string, String string2) {
+        EventPage eventPage=new EventPage();
+        System.out.println("eventPage.Members.getText() = " + eventPage.Members.getText());
+        Assert.assertTrue(eventPage.Members.getText().contains(string));
+        Assert.assertTrue(eventPage.Members.getText().contains(string2));
+    }
+
+
+    @Given("Users can click on More icon")
+    public void usersCanClickOnMoreIcon() {
+
+        new EventPage().More.click();
+        Assert.assertTrue(new EventPage().HideMore.isDisplayed());
+
+
+    }
+
+    @Then("Verify that users clicked on More icon")
+    public void verifyThatUsersClickedOnMoreIcon() {
+        Assert.assertTrue(new EventPage().HideMore.isDisplayed());
+        new EventPage().HideMore.click();
+        Assert.assertTrue(new EventPage().More.isDisplayed());
+    }
 }

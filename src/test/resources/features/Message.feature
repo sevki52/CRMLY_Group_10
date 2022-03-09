@@ -1,4 +1,4 @@
-@smoke
+
 Feature: Message features
 
   Background: the user logged successfully
@@ -78,7 +78,7 @@ Feature: Message features
     When the user clicks the contact
     Then the user should be able to add mention as a "helpdesk17@cybertekschool.com"
 
-  @CRMLYEUG-935
+  @CRMLYEUG-935 @smoke
   Scenario: US-917_TC-07.1 Verify that the user should be able to send a message
     Given the user clicks "Message" tab
     And the user enters "Test-2022" to the text box
